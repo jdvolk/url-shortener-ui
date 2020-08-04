@@ -23,11 +23,10 @@ export const postUrl = async (longUrl, title) => {
       "body": JSON.stringify({
         "long_url": longUrl,
         "title": title
-      })
-      
+      }) 
   })
-  const message = await response;
-  return message.json();
+  const message = await response.json();
+  return message;
 }
 
 

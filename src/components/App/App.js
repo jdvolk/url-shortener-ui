@@ -19,14 +19,13 @@ export class App extends Component {
   sendFormPost = async (url, title) => {
     const apiPostMessage = await postUrl(url, title);
     this.setState( {urls: [...[apiPostMessage], ...this.state.urls]})
-    return apiPostMessage;
   }
   
-  apiDelete = async (id) => {
+  // apiDelete = async (id) => {
     
-    const response = await deleteUrl(id);
-    return response;
-  }
+  //   const response = await deleteUrl(id);
+  //   return response;
+  // }
 
   componentDidMount = async () => {
     const urls = await getAllUrls();
