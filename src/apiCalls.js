@@ -1,5 +1,5 @@
 
-const url = "http://localhost:3001/api/v1/urls"
+const url = "http://localhost:3001/api/v1/urls";
 // export const getUrls = () => {
 //   return fetch('http://localhost:3001/api/v1/urls')
 //       .then(response => response.json())
@@ -14,24 +14,24 @@ export const getAllUrls = async () => {
   return allUrls;
 };
 
-export const postUrl = async (url, title) => {
+export const postUrl = async (longUrl, title) => {
   const response = await fetch (url, {
       "method": "POST",
       "headers": {
         "content-type": "application/json"
       },
       "body": JSON.stringify({
-        "long_url": url,
+        "long_url": longUrl,
         "title": title
       })
-    }
-  )
-  const message = await response.json();
-  return message;
+      
+  })
+  const message = await response;
+  return message.json();
 }
 
 
-'/api/v1/urls/:url_id'// delete
+// delete
 
 export const deleteUrl = async (urlId) => {
   const response = await fetch(
@@ -45,6 +45,6 @@ export const deleteUrl = async (urlId) => {
   return response.status;
 }
 
-'/useshorturl/:url_id'// redirect
+// '/useshorturl/:url_id'// redirect
 
 
